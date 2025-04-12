@@ -45,7 +45,7 @@
 - **フロントエンド**：HTML5, CSS3, JavaScript (ES6+)
 - **レイアウト**：Bootstrap 5
 - **フォント**：Google Fonts (Noto Sans JP)
-- **アイコン**：カスタムSVGアイコン
+- **アイコン**：アイコン素材ダウンロードサイト「icooon-mono」(https://icooon-mono.com/)
 
 ## プロジェクト構成
 
