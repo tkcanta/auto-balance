@@ -1,0 +1,345 @@
+/**
+ * オートバランス.com - 5:5ゲームチーム分けサービス
+ * スタイルシート
+ */
+
+/* ==================== 
+   変数定義
+   ==================== */
+:root {
+    /* カラー */
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+    --border-color: #dee2e6;
+    
+    /* フォント */
+    --base-font-size: 14px;
+    --small-font-size: 0.85rem;
+    --smaller-font-size: 0.75rem;
+    --tiny-font-size: 0.7rem;
+    
+    /* サイズ・スペース */
+    --container-max-width: 960px;
+    --card-border-radius: 6px;
+    --input-border-radius: 4px;
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 15px;
+    --space-lg: 20px;
+}
+
+/* ==================== 
+   基本スタイル
+   ==================== */
+body {
+    background-color: var(--light-color);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: var(--base-font-size);
+    padding-bottom: 50px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+.container {
+    max-width: var(--container-max-width);
+}
+
+/* ==================== 
+   カード・パネル
+   ==================== */
+.card {
+    margin-bottom: 10px;
+    border-radius: var(--card-border-radius);
+}
+
+.card-header h3 {
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+/* チームカード */
+.team-card {
+    border: 1px solid var(--border-color);
+    border-radius: var(--card-border-radius);
+    overflow: hidden;
+    height: 100%;
+    transition: transform 0.2s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-2px);
+}
+
+.team-a-header,
+.team-b-header {
+    padding: var(--space-sm);
+    text-align: center;
+    color: white;
+}
+
+.team-a-header {
+    background-color: var(--primary-color);
+}
+
+.team-b-header {
+    background-color: var(--danger-color);
+}
+
+.team-a-header h5,
+.team-b-header h5 {
+    font-size: var(--small-font-size);
+    margin-bottom: 0;
+    font-weight: 700;
+}
+
+.team-details {
+    padding: var(--space-sm);
+    background-color: var(--light-color);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.team-power-total {
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+.team-members {
+    padding: var(--space-sm);
+}
+
+.team-member {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--space-xs) var(--space-sm);
+    border-bottom: 1px solid var(--light-color);
+}
+
+.team-member:last-child {
+    border-bottom: none;
+}
+
+.team-member-power {
+    color: var(--secondary-color);
+    font-weight: 700;
+}
+
+/* チーム組み合わせ */
+.team-combination {
+    background-color: white;
+    border-radius: var(--card-border-radius);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: var(--space-md);
+    margin-bottom: var(--space-md);
+}
+
+.team-combination h4 {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.row.team-row {
+    margin-right: -5px;
+    margin-left: -5px;
+}
+
+.row.team-row > [class*="col-"] {
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+/* ==================== 
+   プレイヤー入力セクション
+   ==================== */
+.player-input-row {
+    background-color: white;
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--input-border-radius);
+    margin-bottom: var(--space-xs);
+}
+
+.player-input-row:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+.player-number {
+    width: 20px;
+    text-align: right;
+    color: var(--secondary-color);
+}
+
+.power-label {
+    font-size: var(--tiny-font-size);
+    color: var(--secondary-color);
+    white-space: nowrap;
+}
+
+.power-value {
+    min-width: 22px;
+    text-align: right;
+    font-weight: 500;
+}
+
+/* ==================== 
+   フォーム要素
+   ==================== */
+.form-label {
+    font-size: var(--tiny-font-size);
+}
+
+.form-range {
+    height: 1.2rem;
+    background-color: transparent;
+}
+
+/* スライダー横線 */
+.form-range::-webkit-slider-runnable-track {
+    background-color: #d9e1e9;
+    height: 2px;
+    border-radius: 2px;
+}
+
+.form-range::-moz-range-track {
+    background-color: #d9e1e9;
+    height: 2px;
+    border-radius: 2px;
+}
+
+.form-range::-ms-track {
+    background-color: #d9e1e9;
+    height: 2px;
+    border-radius: 2px;
+}
+
+/* スライダーつまみ */
+.form-range::-webkit-slider-thumb {
+    background: var(--primary-color);
+    margin-top: -6px;
+    width: 14px;
+    height: 14px;
+}
+
+.form-range::-moz-range-thumb {
+    background: var(--primary-color);
+    width: 14px;
+    height: 14px;
+}
+
+.form-range::-ms-thumb {
+    background: var(--primary-color);
+    width: 14px;
+    height: 14px;
+}
+
+/* ==================== 
+   ボタン
+   ==================== */
+.btn {
+    padding: 0.25rem 0.5rem;
+    font-size: var(--smaller-font-size);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+
+.btn-outline-secondary {
+    color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.btn-outline-secondary:hover {
+    color: white;
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+/* ==================== 
+   ユーティリティ
+   ==================== */
+.special-icon {
+    width: 16px;
+    height: 16px;
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+/* ==================== 
+   モーダル
+   ==================== */
+.modal-header, 
+.modal-footer {
+    padding: 0.5rem 1rem;
+}
+
+.modal-body {
+    padding: 1rem;
+}
+
+/* ==================== 
+   リスト
+   ==================== */
+.list-group-item {
+    padding: 0.4rem 0.75rem;
+}
+
+/* ヘッダー */
+.header {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 0;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* プレイヤー登録フォーム */
+.form-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* チーム表示 */
+.team-combination {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    padding: 15px;
+}
+
+/* ボタン */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+
+.btn-outline-secondary {
+    color: #6c757d;
+    border-color: #6c757d;
+} 
